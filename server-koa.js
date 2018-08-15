@@ -60,6 +60,7 @@ app.use(nunjucks({
 router.get('*', async ctx => {
     await ctx.render('index');
 });
+app.use(router.routes(), router.allowedMethods());
 
 app.listen(8080, () => {
   console.log('8080');
